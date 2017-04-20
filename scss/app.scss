@@ -49,3 +49,139 @@
 
 @include motion-ui-transitions;
 @include motion-ui-animations;
+
+body {
+  background: #fff url(../images/bg1.png) no-repeat top center;
+  background-size: 100% auto;
+}
+.content {
+  background: url(../images/contentbg1.png) no-repeat center top;
+  background-size: 100% auto;
+}
+.header {
+  padding-top: 50px;
+}
+.header__logo {
+  padding-left: 135px;
+  img {
+    width: 100%;
+  }
+}
+.header__nav {
+  text-align: center;
+  padding-top: 5px;
+  li {
+    display: inline-block;
+  }
+  a {
+    color: $secondary-color;
+    padding: 0 20px;
+    font-size: 17px;
+    font-weight: 700;
+    letter-spacing: 0.12px;
+  }
+}
+.header__phone {
+  font-size: 17px;
+  font-weight: 700;
+  letter-spacing: 0.12px;
+  color: #fff;
+  text-align: right;
+  padding-top: 5px;
+  padding-right: 135px;
+}
+.promo {
+  position: relative;
+  height: 100vh;
+  span {
+    position: absolute;
+    font-size: 50px;
+    font-weight: 900;
+    letter-spacing: 0.36px;
+    color: #fff;
+  }
+  .promo__design {
+    left: 25% !important;
+    top: 13% !important;
+  }
+  .promo__digital {
+    left: 60% !important;
+    top: 7% !important;
+  }
+  .promo__event {
+    left: 70% !important;
+    top: 25% !important;
+  }
+  .promo__production {
+    left: 20% !important;
+    top: 40% !important;
+  }
+  .promo__placement {
+    left: 55% !important;
+    top: 45% !important;
+  }
+}
+.trgright {
+  background: url(../images/contentbg2.png) no-repeat top right;
+  background-size: 100% auto;
+  height: 100vh;
+  position: absolute;
+  right: -3% !important;
+  top: 20%;
+}
+.about {
+  background: url(../images/contentbg3.png) no-repeat top center;
+  background-size: 100% auto;
+  height: 100vh;
+  top: -34vh;
+  z-index: 2;
+  position: relative;
+  div {
+    position: absolute;
+    bottom: 35vh;
+    right: 11%;
+  }
+  h2 {
+    color: $secondary-color;
+    margin-bottom: 30px;
+    font-size: 30px;
+    font-weight: 700;
+    line-height: 25px;
+  }
+  p {
+    color: $secondary-color;
+    font-size: 17px;
+    font-weight: 500;
+    line-height: 25px;
+  }
+}
+h4 {
+  color: $primary-color;
+  font-size: 30px;
+  font-weight: 700;
+  line-height: 25px;
+  width: 100%;
+  margin-bottom: 20px;
+}
+.our-company {
+  margin: 0 auto;
+  float: none !important;
+  clear: both;
+}
+.our-company__wrap {
+  position: relative;
+  top: -50vh;
+}
+.ways-wrap {
+  position: relative;
+  top: -45vh;
+  &>div {
+    padding-bottom: 50px;
+  }
+  span {
+    color: $secondary-color;
+    font-size: 15px;
+    font-weight: 700;
+    line-height: 18px;
+  }
+}
