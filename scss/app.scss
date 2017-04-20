@@ -53,6 +53,14 @@
 body {
   background: #fff url(../images/bg1.png) no-repeat top center;
   background-size: 100% auto;
+    @include breakpoint(large down) {
+      background: #fff;
+      }
+}
+.row {
+  @include breakpoint(1720px down) {
+    max-width: 1200px;
+    }
 }
 h2 {
   text-align: center;
@@ -61,19 +69,40 @@ h2 {
   color: $primary-color;
   font-size: 50px;
   font-weight: 700;
-  line-height: 25px;
+  line-height: 45px;
 }
 .content {
   background: url(../images/contentbg1.png) no-repeat center top;
   background-size: 100% auto;
+    @include breakpoint(large down) {
+      background-size: 110% auto;
+      overflow: hidden;
+      }
+  @include breakpoint(small down) {
+    background-size: 160% auto;
+  }
 }
 .header {
   padding-top: 50px;
+  @include breakpoint(small down) {
+    padding-top: 15px;
+  }
 }
 .header__logo {
   padding-left: 135px;
+  @include breakpoint(medium down) {
+    padding-left: 20px;
+    text-align: center;
+  }
   img {
     width: 100%;
+    max-width: 250px;
+      @include breakpoint(medium down) {
+        max-width: 200px;
+        }
+      @include breakpoint(small down) {
+        max-width: 140px;
+        }
   }
 }
 .header__nav {
@@ -81,6 +110,9 @@ h2 {
   position: relative;
   text-align: center;
   padding-top: 5px;
+  @include breakpoint(medium down) {
+    display: none;
+  }
   li {
     display: inline-block;
   }
@@ -100,17 +132,40 @@ h2 {
   text-align: right;
   padding-top: 5px;
   padding-right: 135px;
+  @include breakpoint(medium down) {
+    display: none;
+  }
 }
 .promo {
   position: relative;
   height: 165vh;
+  padding: 0;
+    @include breakpoint(large down) {
+      height: 145vh;
+      }
+  @include breakpoint(medium down) {
+    height: 110vh;
+  }
+  @include breakpoint(small down) {
+    margin-top: 13vh;
+    }
+    @include breakpoint(374px down) {
+      height: 120vh;
+      }
   span {
     position: absolute;
     font-size: 50px;
     font-weight: 900;
     letter-spacing: 0.36px;
     color: #fff;
+      @include breakpoint(medium down) {
+        font-size: 35px;
+        }
+      @include breakpoint(small down) {
+        font-size: 20px;
+        }
   }
+
   .promo__design {
     left: calc(50% - 450px) !important;
     top: calc(50vh - 300px)!important;
@@ -131,6 +186,97 @@ h2 {
     left: calc(50% + 150px) !important;
     top: calc(50vh + 30px)!important;
   }
+  @include breakpoint(1240px down) {
+          .promo__design {
+            left: calc(50% - 450px) !important;
+            top: calc(50vh - 300px)!important;
+          }
+          .promo__digital {
+            left: calc(50% + 250px) !important;
+            top: calc(50vh - 350px)!important;
+          }
+          .promo__event {
+            left: calc(50% + 300px) !important;
+            top: calc(50vh - 200px)!important;
+          }
+          .promo__production {
+            left: calc(50% - 500px) !important;
+            top: calc(50vh - 80px)!important;
+          }
+          .promo__placement {
+            left: calc(50% + 50px) !important;
+            top: calc(50vh + 30px)!important;
+          }
+        }
+  @include breakpoint(large down) {
+    .promo__design {
+      left: calc(50% - 400px) !important;
+      top: calc(50vh - 300px)!important;
+    }
+    .promo__digital {
+      left: calc(50% + 160px) !important;
+      top: calc(50vh - 350px)!important;
+    }
+    .promo__event {
+      left: calc(50% + 250px) !important;
+      top: calc(50vh - 200px)!important;
+    }
+    .promo__production {
+      left: calc(50% - 300px) !important;
+      top: calc(50vh - 200px)!important;
+    }
+    .promo__placement {
+      left: calc(50% - 50px) !important;
+      top: calc(50vh - 30px)!important;
+    }
+  }
+  @include breakpoint(medium down) {
+    .promo__design {
+      left: calc(50% - 200px) !important;
+      top: calc(50vh - 460px)!important;
+    }
+    .promo__digital {
+      left: calc(50% + 60px) !important;
+      top: calc(50vh - 480px)!important;
+    }
+    .promo__event {
+      left: calc(50% + 100px) !important;
+      top: calc(50vh - 330px)!important;
+    }
+    .promo__production {
+      left: calc(50% - 200px) !important;
+      top: calc(50vh - 300px)!important;
+    }
+    .promo__placement {
+      left: calc(50% - 50px) !important;
+      top: calc(50vh - 250px)!important;
+    }
+  }
+  @include breakpoint(small down) {
+    .promo__design {
+      left: 25px !important;
+      top: -25px !important;
+    }
+    .promo__digital {
+      left: auto !important;
+      right: 60px !important;
+      top: -20px !important;
+    }
+    .promo__event {
+      left: auto !important;
+      right: 15px !important;
+      top: 10px!important;
+    }
+    .promo__production {
+      left: 25px !important;
+      top: 80px !important;
+    }
+    .promo__placement {
+      left: auto !important;
+      right: 35px !important;
+      top: 60px !important;
+    }
+  }
 }
 .trgright {
   background: url(../images/contentbg2.png) no-repeat top right;
@@ -139,6 +285,16 @@ h2 {
   position: absolute;
   right: -3% !important;
   top: 20%;
+  @include breakpoint(1240px down) {
+    right: 0% !important;
+  }
+  @include breakpoint(medium down) {
+    height: 40vh;
+    }
+  @include breakpoint(small down) {
+    top: 16vh;
+    height: 40vh;
+  }
 }
 .about {
   background: url(../images/contentbg3.png) no-repeat top center;
@@ -150,18 +306,45 @@ h2 {
   float: none !important;
   clear: both;
   overflow: hidden;
+  @include breakpoint(medium down) {
+    top: 35vh;
+    height: 47vh;
+    overflow: visible;
+  }
+  
+
   div {
     position: absolute;
     top: 40%;
     right: 11%;
+      @include breakpoint(1200px down) {
+        top: 30%;
+        }
+      @include breakpoint(medium down) {
+        top: 80%;
+        right: 0;
+        width: 100%;
+        padding: 0 30px;
+        max-width: 450px;
+        text-align: center;
+        }
+      @include breakpoint(small down) {
+        top: 60%;
+        }
+    @include breakpoint(375px down) {
+      top: 40%;
+    }
   }
   h2 {
     color: $secondary-color;
     margin-bottom: 30px;
     font-size: 30px;
     font-weight: 700;
-    line-height: 25px;
+    line-height: 35px;
     text-align: left;
+      @include breakpoint(medium down) {
+        text-align: center;
+        }
   }
   p {
     color: $secondary-color;
@@ -203,14 +386,30 @@ h4 {
   float: none !important;
   overflow: hidden;
   clear: both;
+  @include breakpoint(large down) {
+    padding-left: 40px;
+  }
+  @include breakpoint(small down) {
+    padding-left: 0;
+  }
   &>div {
     padding-bottom: 50px;
+      @include breakpoint(medium down) {
+        padding-left: 60px;
+        height: 100px;
+        }
+      @include breakpoint(small down) {
+        padding-left: 20px;
+        }
   }
   img {
     display: block;
     width: 60px;
     height: auto;
     float: left;
+    @include breakpoint(small down) {
+      width: 35px;
+    }
   }
   span {
     color: $secondary-color;
@@ -222,22 +421,41 @@ h4 {
     margin-top: 10px;
     float: left;
     width: calc(100% - 70px);
+    @include breakpoint(small down) {
+      font-size: 11px;
+      margin-top: 0;
+    }
   }
 }
 .clients {
   max-width: 1024px !important;
   margin-left: auto !important;
   margin-right: auto !important;
+    @include breakpoint(medium down) {
+      padding: 0 60px;
+      }
+    @include breakpoint(small down) {
+      padding: 0 20px;
+      }
 }
 .client {
   text-align: center;
   padding: 70px 0;
   border-top:1px solid #e3d8d6;
   border-top:1px solid #e3d8d6;
+  @include breakpoint(medium down) {
+    padding: 70px 20px;
+  }
+    @include breakpoint(small down) {
+      padding: 30px 20px 10px 20px;
+      }
 }
 .contacts {
   text-align: center;
   padding-bottom: 50px;
+    @include breakpoint(small down) {
+      padding-top: 40px;
+      }
 span {
   color: $secondary-color;
   font-size: 17px;
@@ -265,6 +483,17 @@ span.contacts__phone {
   font-size: 17px;
   font-weight: 500;
   line-height: 25px;
+    @include breakpoint(large down) {
+      background-size: cover;
+      height: 135vh;
+      }
+    @include breakpoint(medium down) {
+      height: 120vh;
+      }
+  @include breakpoint(small down) {
+    height: auto;
+    padding-bottom: 250px;
+  }
   .column {
     max-width: 510px;
     margin: 0 auto;
@@ -302,10 +531,17 @@ span.contacts__phone {
   bottom: 70px;
   left: 50%;
   transform: translateX(-50%);
+    @include breakpoint(1460px down) {
+      bottom: 40px;
+      }
 }
 .ange {
   position: absolute !important;
   width: 100%;
   display: block;
   z-index: 4;
+  @include breakpoint(small down) {
+    height: 100vh;
+    width: auto;
+  }
 }
