@@ -54,6 +54,15 @@ body {
   background: #fff url(../images/bg1.png) no-repeat top center;
   background-size: 100% auto;
 }
+h2 {
+  text-align: center;
+  margin-top: 110px;
+  margin-bottom: 35px;
+  color: $primary-color;
+  font-size: 50px;
+  font-weight: 700;
+  line-height: 25px;
+}
 .content {
   background: url(../images/contentbg1.png) no-repeat center top;
   background-size: 100% auto;
@@ -92,7 +101,7 @@ body {
 }
 .promo {
   position: relative;
-  height: 100vh;
+  height: 165vh;
   span {
     position: absolute;
     font-size: 50px;
@@ -101,30 +110,30 @@ body {
     color: #fff;
   }
   .promo__design {
-    left: 25% !important;
-    top: 13% !important;
+    left: calc(50% - 450px) !important;
+    top: calc(50vh - 300px)!important;
   }
   .promo__digital {
-    left: 60% !important;
-    top: 7% !important;
+    left: calc(50% + 250px) !important;
+    top: calc(50vh - 350px)!important;
   }
   .promo__event {
-    left: 70% !important;
-    top: 25% !important;
+    left: calc(50% + 450px) !important;
+    top: calc(50vh - 200px)!important;
   }
   .promo__production {
-    left: 20% !important;
-    top: 40% !important;
+    left: calc(50% - 500px) !important;
+    top: calc(50vh - 10px)!important;
   }
   .promo__placement {
-    left: 55% !important;
-    top: 45% !important;
+    left: calc(50% + 150px) !important;
+    top: calc(50vh + 30px)!important;
   }
 }
 .trgright {
   background: url(../images/contentbg2.png) no-repeat top right;
   background-size: 100% auto;
-  height: 100vh;
+  height: 1000px;
   position: absolute;
   right: -3% !important;
   top: 20%;
@@ -132,13 +141,16 @@ body {
 .about {
   background: url(../images/contentbg3.png) no-repeat top center;
   background-size: 100% auto;
-  height: 100vh;
-  top: -34vh;
+  height: 110vh;
+  top: 55vh;
   z-index: 2;
   position: relative;
+  float: none !important;
+  clear: both;
+  overflow: hidden;
   div {
     position: absolute;
-    bottom: 35vh;
+    top: 50%;
     right: 11%;
   }
   h2 {
@@ -167,21 +179,51 @@ h4 {
   margin: 0 auto;
   float: none !important;
   clear: both;
+  overflow: hidden;
+  max-width: 514px;
+  margin-bottom: 40px;
 }
 .our-company__wrap {
   position: relative;
-  top: -50vh;
+  float: none !important;
+  clear: both;
+  overflow: hidden;
+
 }
 .ways-wrap {
+  left: 50%;
+  transform: translateX(-50%);
   position: relative;
-  top: -45vh;
+  text-align: left;
+  padding-left: 150px;
+  //top: -45vh;
+  float: none !important;
+  overflow: hidden;
+  clear: both;
   &>div {
     padding-bottom: 50px;
+  }
+  img {
+    display: block;
+    width: 60px;
+    height: auto;
+    float: left;
   }
   span {
     color: $secondary-color;
     font-size: 15px;
     font-weight: 700;
     line-height: 18px;
+    display: block;
+    margin-left: 10px;
+    margin-top: 10px;
+    float: left;
+    width: calc(100% - 70px);
   }
+}
+.client {
+  text-align: center;
+  padding: 70px 0;
+  border-top:1px solid #e3d8d6;
+  border-top:1px solid #e3d8d6;
 }
