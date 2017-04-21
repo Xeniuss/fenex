@@ -10,7 +10,7 @@
 </head>
 <body>
 <div id="parallax">
-    <img src="images/parallaxang.svg" class="ange layer" data-depth="0.05">
+    <img src="images/parallaxang.svg" class="ange layer" data-depth="0.04">
     <div class="row content">
     <div class="row header">
         <div class="large-3 column header__logo">
@@ -21,10 +21,10 @@
         </div>
         <div class="large-6 column header__nav">
             <ul class="no-bullet">
-                <li><a href="">Агентство</a></li>
-                <li><a href="">Услуги</a></li>
-                <li><a href="">Клиенты</a></li>
-                <li><a href="">Контакты</a></li>
+                <li><a class="scroller" data-scrollto="agency">Агентство</a></li>
+                <li><a class="scroller" data-scrollto="services">Услуги</a></li>
+                <li><a class="scroller" data-scrollto="clients">Клиенты</a></li>
+                <li><a class="scroller" data-scrollto="contacts">Контакты</a></li>
             </ul>
         </div>
         <div class="large-3 column header__phone">
@@ -33,15 +33,15 @@
     </div>
     <div class="row">
         <div class="large-12 column promo">
-            <span class="promo__design layer" data-depth="0.1">Design</span>
-            <span class="promo__digital layer" data-depth="0.1">Digital</span>
+            <span class="promo__design layer"  data-depth="0.08">Design</span>
+            <span class="promo__digital layer"  data-depth="0.08">Digital</span>
             <span class="promo__event layer" data-depth="0.08">Event</span>
-            <span class="promo__production layer" data-depth="0.25">Production</span>
-            <span class="promo__placement layer" data-depth="0.25">Placement</span>
+            <span class="promo__production layer" data-depth="0.08">Production</span>
+            <span class="promo__placement layer" data-depth="0.08">Placement</span>
             <div class="large-8 column trgright">
 
             </div>
-            <div class="about">
+            <div class="about" id="agency">
                 <div class="large-4 column">
                     <h2>Fenex Media Group</h2>
                     <p>Профессиональная команда, новые разработки и нестандартные решения позволяют нам осуществлять
@@ -51,7 +51,7 @@
         </div>
     </div>
 
-    <div class="large-12 column text-center our-company__wrap">
+    <div class="large-12 column text-center our-company__wrap" id="services">
         <h4>Наши услуги</h4>
         <div class="large-5 column our-company">
             <p>
@@ -87,7 +87,7 @@
         </div>
     </div>
 <h2>Любимые клиенты</h2>
-    <div class="row clients" data-equalizer="clients">
+    <div class="row clients" data-equalizer="clients" id="clients">
         <div class="large-3 medium-3 small-6 column client" data-equalizer-watch="clients"><img src="images/clients/client1.svg" alt=""></div>
         <div class="large-3 medium-3 small-6 column client" data-equalizer-watch="clients"><img src="images/clients/client2.svg" alt=""></div>
         <div class="large-3 medium-3 small-6 column client" data-equalizer-watch="clients"><img src="images/clients/client3.png" alt=""></div>
@@ -121,7 +121,7 @@
         <div class="large-3 medium-3 small-6 column client" data-equalizer-watch="clients"><img src="images/clients/client31.svg" alt=""></div>
         <div class="large-3 medium-3 small-6 column client" data-equalizer-watch="clients"><img src="images/clients/client32.svg" alt=""></div>
     </div>
-      <div class="row contacts">
+      <div class="row contacts" id="contacts">
           <h4>Контактная информация</h4>
           <span class="contacts__phone">+7 499 705 8931</span>
           <span>115114, Москва, Павелецкая набережная, дом<br>2, строение 4, офис 304</span>
