@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--<meta name="viewport" content="width=1024 ">-->
     <title>Foundation for Sites</title>
     <link href="https://fonts.googleapis.com/css?family=Exo+2:300,500,700,900&amp;subset=cyrillic" rel="stylesheet">
     <link rel="stylesheet" href="css/app.css">
@@ -11,15 +11,13 @@
 <body>
 <div id="parallax">
     <img src="images/parallaxang.svg" class="ange layer" data-depth="0.04">
-    <div class="row content">
+    <div class="content-wrap">
+    <div class="content">
     <div class="row header">
-        <div class="large-3 column header__logo">
-            <picture>
-                <source media="(max-width: 768px)" srcset="images/logomob.svg">
+        <div class="large-3 medium-3 column header__logo">
                 <img src="images/logo.svg" alt="">
-            </picture>
         </div>
-        <div class="large-6 column header__nav">
+        <div class="large-6 medium-6 column header__nav">
             <ul class="no-bullet">
                 <li><a class="scroller" data-scrollto="agency">Агентство</a></li>
                 <li><a class="scroller" data-scrollto="services">Услуги</a></li>
@@ -27,7 +25,7 @@
                 <li><a class="scroller" data-scrollto="contacts">Контакты</a></li>
             </ul>
         </div>
-        <div class="large-3 column header__phone">
+        <div class="large-3 medium-3 column header__phone">
             <span>+7 499 705 8931</span>
         </div>
     </div>
@@ -38,49 +36,47 @@
             <span class="promo__event layer" data-depth="0.08">Event</span>
             <span class="promo__production layer" data-depth="0.08">Production</span>
             <span class="promo__placement layer" data-depth="0.08">Placement</span>
-            <div class="large-8 column trgright">
-
-            </div>
-            <div class="about" id="agency">
-                <div class="large-4 column">
+            <div class="about align-right" id="agency">
+                <div class="large-4 medium-12 small-12 column">
                     <h2>Fenex Media Group</h2>
                     <p>Профессиональная команда, новые разработки и нестандартные решения позволяют нам осуществлять
                         проекты любой сложности и добиваться впечатляющих результатов.</p>
                 </div>
+
             </div>
         </div>
     </div>
 
-    <div class="large-12 column text-center our-company__wrap" id="services">
+    <div class="row text-center our-company__wrap" id="services">
         <h4>Наши услуги</h4>
-        <div class="large-5 column our-company">
+        <div class="large-12 medium-12 small-12 column our-company">
             <p>
                 В Fenex Media Group вы можете заказать весь спектр рекламных услуг. Для наших клиентов мы создаем
                 уникальные и эффективные проекты.
             </p>
         </div>
-        <div class="ways-wrap large-9 column">
-            <div class="large-4 medium-6 small-6 column">
+        <div class="ways-wrap row align-center">
+            <div class="large-4 medium-4 small-6 column">
                 <img src="images/service1.svg" alt="">
                 <span>Брендинг</span>
             </div>
-            <div class="large-4 medium-6 small-6 column">
+            <div class="large-4 medium-4 small-6 column">
                 <img src="images/service2.svg" alt="">
                 <span>Рекламные<br>кампании</span>
             </div>
-            <div class="large-4 medium-6 small-6 column">
+            <div class="large-4 medium-4 small-6 column">
                 <img src="images/service3.svg" alt="">
                 <span>Корпоративные<br>подарки</span>
             </div>
-            <div class="large-4 medium-6 small-6 column">
+            <div class="large-4 medium-4 small-6 column">
                 <img src="images/service4.svg" alt="">
                 <span>Полиграфия</span>
             </div>
-            <div class="large-4 medium-6 small-6 column">
+            <div class="large-4 medium-4 small-6 column">
                 <img src="images/service5.svg" alt="">
                 <span>Организация<br>мероприятий</span>
             </div>
-            <div class="large-4 medium-6 small-6 column">
+            <div class="large-4 medium-4 small-6 column">
                 <img src="images/service6.svg" alt="">
                 <span>Веб-дизайн</span>
             </div>
@@ -121,7 +117,7 @@
         <div class="large-3 medium-3 small-6 column client" data-equalizer-watch="clients"><img src="images/clients/client31.svg" alt=""></div>
         <div class="large-3 medium-3 small-6 column client" data-equalizer-watch="clients"><img src="images/clients/client32.svg" alt=""></div>
     </div>
-      <div class="row contacts" id="contacts">
+      <div class="row contacts align-center" id="contacts">
           <h4>Контактная информация</h4>
           <span class="contacts__phone">+7 499 705 8931</span>
           <span>115114, Москва, Павелецкая набережная, дом<br>2, строение 4, офис 304</span>
@@ -129,20 +125,31 @@
       </div>
 </div>
 </div>
+</div>
 <div class="footer">
     <div class="large-12 column">
         <h4>Форма обратной связи</h4>
         <span>Пишите нам по любым вопросам и предложениям или просто оставьте Ваши контакты, мы перезвоним!</span>
     </div>
-    <form action="" class="large-6 column">
+
+    <form id="contactform" class="large-6 column" data-abide>
         <label>Ваше имя
-        <input type="text">
+            <span class="form-error erroermassagge">
+                Поле обязательно для заполнения!
+            </span>
+            <input id="name" type="text" name="name" required>
         </label>
         <label>Телефон или e-mail
-        <input type="text">
+            <span class="form-error erroermassagge">
+                Поле обязательно для заполнения!
+            </span>
+            <input id="phoneoremail" type="text" name="phoneoremail"  required>
         </label>
         <label>Сообщение
-            <textarea name="" id="" cols="30" rows="10"></textarea>
+            <span class="form-error erroermassagge">
+                Поле обязательно для заполнения!
+            </span>
+            <textarea  name="message" id="message" cols="30" rows="10" required></textarea>
         </label>
         <button class="button">Отправить запрос</button>
     </form>
@@ -155,7 +162,10 @@
 <script src="bower_components/foundation-sites/dist/js/foundation.js"></script>
 <script src="http://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
 <script src="http://matthew.wagerfield.com/parallax/deploy/jquery.parallax.js"></script>
-
+<!--<script src="http://cdn.jsdelivr.net/jquery.validation/1.15.1/jquery.validate.min.js"></script>-->
+<!--<script src="js/inputmask.js"></script>-->
+<!--<script src="js/inputmask.phone.extensions.js"></script>-->
+<!--<script src="js/jquery.inputmask.js"></script>-->
 <script src="js/app.js"></script>
 </body>
 </html>
