@@ -21,12 +21,15 @@ $(window).resize(function() {
 
 $(window).scroll(function (event) {
     var scroll = $(window).scrollTop();
-    $('.ange').css('transform' , 'translateY( -' + scroll/5 + 'px)');
-    $('.promo__design').css('transform' , 'translateY( -' + scroll/5.2 + 'px)');
-    $('.promo__digital').css('transform' , 'translateY( -' + scroll/5.3 + 'px)');
-    $('.promo__event').css('transform' , 'translateY( -' + scroll/5.4 + 'px)');
-    $('.promo__production').css('transform' , 'translateY( -' + scroll/5.3 + 'px)');
-    $('.promo__placement').css('transform' , 'translateY( -' + scroll/5.2 + 'px)');
+    (scroll > 500) ? scrollfix = 500 : scrollfix = scroll;
+
+
+    $('.ange').css('transform' , 'translateY( -' + scrollfix/5 + 'px)');
+    $('.promo__design').css('transform' , 'translateY( -' + scrollfix/5.2 + 'px)');
+    $('.promo__digital').css('transform' , 'translateY( -' + scrollfix/5.3 + 'px)');
+    $('.promo__event').css('transform' , 'translateY( -' + scrollfix/5.4 + 'px)');
+    $('.promo__production').css('transform' , 'translateY( -' + scrollfix/5.3 + 'px)');
+    $('.promo__placement').css('transform' , 'translateY( -' + scrollfix/5.2 + 'px)');
 });
 $('.scroller').click(function () {
     var scrollId = '#' + $(this).attr('data-scrollto');
@@ -38,19 +41,22 @@ $(document).ready(function(){
     logomaker();
     $('#submit').click(function(){
         if($('#contactform input').val() == ''){
-            alert('Input can not be left blank');
+            $('.alert').css('display', 'block');
         }
     });
-    $("#contactform").submit(function(e) { //устанавливаем событие отправки для формы с id=form
+    $("#contactform").submit(function(e) {
         e.preventDefault();
         var form_data = $(this).serialize(); //собераем все данные из формы
-        $.ajax({
+            $.ajax({
             type: "POST", //Метод отправки
             url: "../phpmail.php", //путь до php фаила отправителя
             data: form_data,
             success: function() {
-                //код в этом блоке выполняется при успешной отправке сообщения
-                $('#contactform').reset();
+                $( '#contactform' ).each(function(){
+                    this.reset();
+                });
+                $('.success').css('display', 'block');
+
             },
             error: function () {
 
