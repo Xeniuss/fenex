@@ -1,7 +1,7 @@
 
 <?php
 if((isset($_POST['name'])&&$_POST['name']!="")&&(isset($_POST['phoneoremail'])&&$_POST['phoneoremail']!="")&&(isset($_POST['message'])&&$_POST['message']!="")){ //Проверка отправилось ли наше поля name и не пустые ли они
-    $to = 'truexeniuss@gmail.com'; //Почта получателя, через запятую можно указать сколько угодно адресов
+    $to = 'krasovskiyk@me.com'; //Почта получателя, через запятую можно указать сколько угодно адресов
     $subject = 'Записаться с сайта FENEX'; //Загаловок сообщения
     $message = '
                 <html>
@@ -15,7 +15,7 @@ if((isset($_POST['name'])&&$_POST['name']!="")&&(isset($_POST['phoneoremail'])&&
                     </body>
                 </html>'; //Текст нащего сообщения можно использовать HTML теги
     $headers  = "Content-type: text/html; charset=utf-8 \r\n"; //Кодировка письма
-    $headers .= "From: Отправитель <truexeniuss@gmail.com>\r\n"; //Наименование и почта отправителя
+    $headers .= "From: Отправитель <krasovskiyk@me.com>\r\n"; //Наименование и почта отправителя
     mail($to, $subject, $message, $headers); //Отправка письма с помощью функции mail
 }
 ?>
