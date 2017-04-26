@@ -49,19 +49,27 @@
 
 @include motion-ui-transitions;
 @include motion-ui-animations;
-
+html {
+  min-width: 768px !important;
+}
 body {
+  position: relative;
   background: #fff url(../images/bg1.png) no-repeat top center;
   background-size: 100% auto;
+  min-width: 768px !important;
+  width: auto !important;
   @include breakpoint(medium down) {
     background-size: auto 95vh;
   }
 }
-
+.page-wrapper {
+  min-width: 768px !important;
+}
 .row {
   transition: all .4s ease;
+  min-width: 768px !important;
   @include breakpoint(1720px down) {
-    max-width: 1200px;
+    max-width: 1300px;
   }
 }
 
@@ -78,22 +86,16 @@ h2 {
 
 .content-wrap {
   background: url(../images/contentbg1.png) no-repeat center top;
-  background-size: 1600px auto;
-  max-width: 1600px;
+  background-size: 1300px auto;
+  min-width:768px;
+  max-width: 1300px;
   margin: 0 auto;
 
-  @include breakpoint(small down) {
-    background-size: 160% auto;
-    @include breakpoint(landscape) {
-      background-size: 110% auto;
-    }
-  }
-  @include breakpoint(374px down) {
-    background-size: 180% auto;
-  }
+
 }
 
 .content {
+  min-width: 768px !important;
   width: 1024px;
   margin: 0 auto;
   @include breakpoint(medium down) {
@@ -104,9 +106,7 @@ h2 {
 .header {
   padding-top: 50px;
   width: 100%;
-  @include breakpoint(small down) {
-    padding-top: 15px;
-  }
+
 }
 
 .header__logo {
@@ -165,27 +165,14 @@ h2 {
 
 .promo {
   position: relative;
-  height: 1460px;
+  height: 1160px;
   padding: 0;
   width: 1024px;
   @include breakpoint(medium down) {
     width: 768px;
+    height: 1460px;
   }
-  @include breakpoint(small down) {
-    margin-top: 13vh;
-    height: 205vw;
-    @include breakpoint(landscape) {
-      height: 100vw;
-    }
-  }
-  @include breakpoint(568px down) {
-    @include breakpoint(landscape) {
-      height: 120vw;
-    }
-  }
-  @include breakpoint(374px down) {
-    height: 150vh;
-  }
+
   span {
     position: absolute;
     font-size: 50px;
@@ -193,74 +180,45 @@ h2 {
     letter-spacing: 0.36px;
     color: #fff;
     z-index: 8;
-    transition: all .5s ease;
+    //transition: all .5s ease;
 
-    @include breakpoint(small down) {
-      font-size: 20px;
-      display: none;
-    }
   }
   .promo__design {
     left: calc(40% - 269px) !important;
-    top: 193px !important;
+    top: 123px !important;
   }
   .promo__digital {
     left: calc(40% + 245px) !important;
-    top: 171px !important;
+    top: 121px !important;
   }
   .promo__event {
     left: calc(40% + 374px) !important;
-    top: 300px !important;
+    top: 240px !important;
   }
   .promo__production {
     left: calc(40% - 337px) !important;
-    top: 421px !important;
+    top: 311px !important;
   }
   .promo__placement {
     left: calc(40% + 114px) !important;
-    top: 452px !important;
+    top: 352px !important;
   }
   @include breakpoint(medium down) {
     .promo__digital {
       left: calc(40% + 245px) !important;
-      top: 151px !important;
+      top: 101px !important;
     }
     .promo__design {
       left: calc(40% - 269px) !important;
-      top: 173px !important;
+      top: 103px !important;
     }
     .promo__event {
-      left: calc(40% + 324px) !important;
-      top: 300px !important;
+      left: calc(40% + 304px) !important;
+      top: 200px !important;
     }
     .promo__production {
       left: calc(40% - 300px) !important;
-      top: 421px !important;
-    }
-  }
-  @include breakpoint(small down) {
-    .promo__design {
-      left: 4rem !important;
-      top: calc(9% - 8rem) !important;
-    }
-    .promo__digital {
-      left: auto !important;
-      right: 4rem !important;
-      top: calc(9% - 9rem) !important;
-    }
-    .promo__event {
-      left: auto !important;
-      right: 2rem !important;
-      top: 4% !important;
-    }
-    .promo__production {
-      left: 2rem !important;
-      top: calc(1% + 10rem) !important;
-    }
-    .promo__placement {
-      left: auto !important;
-      right: 4rem !important;
-      top: calc(1% + 12rem) !important;
+      top: 291px !important;
     }
   }
 }
@@ -273,18 +231,18 @@ h2 {
 
 .about {
   width: 100%;
-  margin-top: 840px;
+  margin-top: 710px;
   position: relative;
   margin-bottom: 50px;
-  height: 700px;
+  height: 600px;
   display: flex;
   align-items: center;
   @include breakpoint(medium down) {
     height: 1000px;
   }
   div {
-    margin-top: 180px;
-    margin-right: 40px;
+    margin-top: 0px;
+    margin-right: 60px;
     @include breakpoint(medium down) {
       margin: 800px auto 0 auto;
       padding: 0 20px;
@@ -415,17 +373,13 @@ h4 {
   margin-left: auto !important;
   margin-right: auto !important;
   border-top: 1px solid #e3d8d6;
-  @include breakpoint(small down) {
-    padding: 0 20px;
-  }
+
 }
 
 .client {
   text-align: center;
   padding: 70px 0;
-  @include breakpoint(small down) {
-    padding: 30px 20px 10px 20px;
-  }
+
 }
 
 .contacts {
@@ -465,8 +419,9 @@ span.contacts__phone {
   position: relative;
   background: url(../images/footerbg.png) no-repeat bottom center;
   background-size: cover;
-  height: 135vh;
-  padding-top: 20vh;
+  height: auto;
+  padding-top: 160px;
+  padding-bottom: 420px;
   text-align: center;
   font-size: 17px;
   font-weight: 500;
@@ -541,7 +496,7 @@ span.contacts__phone {
   height: 130vh;
   display: block;
   z-index: 4;
-  transition: all .3s ease;
+  //transition: all .3s ease;
   background: url(../images/parallaxang.svg) no-repeat center top;
   background-size: 1600px auto;
 }
@@ -556,4 +511,8 @@ span.contacts__phone {
 }
 .callout {
   margin: 1rem 0 1rem 0;
+}
+#parallax {
+  position: relative;
+  min-width: 768px;
 }
